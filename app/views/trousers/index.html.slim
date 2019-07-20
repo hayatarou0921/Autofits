@@ -1,0 +1,6 @@
+.trousers.container
+  h1 ボトムス一覧
+  - @trousers.each do |trouser|
+    =image_tag trouser.image.url
+    =link_to '削除する', trouser_path(trouser), method: :delete, data: { confirm: 'ボトムスを削除してもよろしいですか？' }, class: 'btn btn-danger'
+  =link_to 'ボトムスを追加する', new_trouser_path, class: 'btn btn-primary d-block col-4 mx-auto mt-3'
