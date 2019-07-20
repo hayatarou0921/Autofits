@@ -1,0 +1,7 @@
+.shoes.container
+  h1 シューズを追加する
+  = form_with model: @shoe, local: true do |f|
+    .form-group
+      =f.label :image
+      =f.file_field :image, class: 'form-control'
+    =f.submit '追加', class: 'btn btn-primary'
