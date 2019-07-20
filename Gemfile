@@ -11,9 +11,12 @@ gem 'spring-commands-rspec'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
-gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'devise'
+gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'openssl'
+gem 'devise-bootstrap-views'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
