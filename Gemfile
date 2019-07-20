@@ -11,6 +11,8 @@ gem 'spring-commands-rspec'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'rails-i18n'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
