@@ -1,0 +1,10 @@
+.container.outfits
+  h1 コーディネート一覧
+
+  - @outfits.each do |outfit|
+    = image_tag connect_top_id_to_user(outfit).image.url
+    = image_tag connect_trouser_id_to_user(outfit).image.url
+    = image_tag connect_shoe_id_to_user(outfit).image.url
+    = link_to '削除する', outfit_path(outfit), method: :delete
+
+  =link_to 'コーディネートを作成する', new_outfit_path

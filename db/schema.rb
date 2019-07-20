@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_130131) do
+ActiveRecord::Schema.define(version: 2019_07_20_130940) do
+
+  create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "top_id", null: false
+    t.integer "trouser_id", null: false
+    t.integer "shoe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_outfits_on_user_id"
+  end
 
   create_table "shoes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -48,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_130131) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "outfits", "users"
   add_foreign_key "shoes", "users"
   add_foreign_key "tops", "users"
   add_foreign_key "trousers", "users"
