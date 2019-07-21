@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-gem 'rspec-rails' #それぞれ、必要があればバージョン指定をする。
+gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'spring-commands-rspec'
 gem 'slim-rails'
@@ -18,7 +18,8 @@ gem 'rails-i18n'
 gem 'openssl'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
-gem "mini_magick", ">= 4.9.4"
+gem 'mini_magick', '>= 4.9.4'
+gem 'capybara'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server

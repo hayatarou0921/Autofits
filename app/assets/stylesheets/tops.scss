@@ -10,11 +10,14 @@
   }
 
   .item {
-      // border: 1px solid gray;
-      // border-radius: 15px;
+      border: 1px solid gray;
+      border-radius: 15px;
+      margin: 5px 40px;
+      align-items: center;
+      
       img {
-        padding: 10px;
-        border: 1px solid gray;
+        padding: 5px;
+        border: 1px white gray;
         border-radius: 30px;
       }
   }
