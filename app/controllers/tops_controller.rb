@@ -9,11 +9,18 @@ class TopsController < ApplicationController
 
   def create
     @top = Top.new(top_params)
+    @top.user_id = current_user.id
     if @top.save
       redirect_to tops_path, notice: 'トップスを追加しました。'
     else
       render :new
     end
+  end
+
+  def destroy
+    @top = Top.find(params[:id])
+    @top.destroy
+    redirect_to tops_path, notice: 'トップスを削除しました。'
   end
 
   private

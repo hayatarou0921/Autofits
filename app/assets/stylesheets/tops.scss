@@ -8,3 +8,16 @@
       padding-top: 100px;
     }
   }
+
+  .item {
+      border: 1px solid gray;
+      border-radius: 15px;
+      margin: 5px 40px;
+      align-items: center;
+      
+      img {
+        padding: 5px;
+        border: 1px white gray;
+        border-radius: 30px;
+      }
+  }

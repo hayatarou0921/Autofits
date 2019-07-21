@@ -38,5 +38,5 @@ class OutfitsController < ApplicationController
     @outfit.destroy
     redirect_to outfits_path
   end
-    
+
 end

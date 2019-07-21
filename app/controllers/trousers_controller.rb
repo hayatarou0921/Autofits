@@ -9,6 +9,7 @@ class TrousersController < ApplicationController
 
   def create
     @trouser = Trouser.new(trouser_params)
+    @trouser.user_id = current_user.id
     if @trouser.save
       redirect_to trousers_path, notice: 'トップスを追加しました。'
     else
