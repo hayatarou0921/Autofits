@@ -9,8 +9,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     =render partial: 'layouts/header'
-    -if notice
-      = notice
-    -if alert
-      = alert
+    -if flash.notice
+      .notice.mx-auto.btn.btn-info.d-block.col-6
+        =flash.notice
+    -if flash.alert
+      .notice.mx-auto.btn.btn-danger.d-block.col-6
+        =flash.alert
     = yield

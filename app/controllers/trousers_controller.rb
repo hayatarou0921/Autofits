@@ -1,4 +1,6 @@
 class TrousersController < ApplicationController
+  include SetAttributes
+  
   def index
     @trousers = Trouser.all
   end
@@ -9,12 +11,23 @@ class TrousersController < ApplicationController
 
   def create
     @trouser = Trouser.new(trouser_params)
-    @trouser.user_id = current_user.id
+    set_user_id(@trouser)
     if @trouser.save
-      redirect_to trousers_path, notice: 'トップスを追加しました。'
+      redirect_to trousers_path, notice: 'ボトムスを追加しました。'
     else
       render :new
     end
+  end
+
+  def destroy
+    @trouser = Trouser.find(params[:id])
+    if outfits = Outfit.where(trouser_id: @trouser.id)
+      outfits.each do |outfit|
+        outfit.destroy
+      end
+    end
+    @trouser.destroy
+    redirect_to trousers_path, notice: 'ボトムスと、ボトムスの使われたコーデを削除しました。'
   end
 
   private

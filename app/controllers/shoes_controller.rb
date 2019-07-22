@@ -1,4 +1,6 @@
 class ShoesController < ApplicationController
+  include SetAttributes
+  
   def index
     @shoes = Shoe.all
   end
@@ -9,9 +11,9 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.new(shoe_params)
-    @shoe.user_id = current_user.id
+    set_user_id(@shoe)
     if @shoe.save
-      redirect_to shoes_path, notice: 'トップスを追加しました。'
+      redirect_to shoes_path, notice: 'シューズを追加しました。'
     else
       render :new
     end
@@ -19,11 +21,13 @@ class ShoesController < ApplicationController
 
   def destroy
     @shoe = Shoe.find(params[:id])
-    if outfit = Outfit.find_by(shoe_id: @shoe.id)
-      outfit.destroy
+    if outfits = Outfit.where(shoe_id: @shoe.id)
+      outfits.each do |outfit|
+        outfit.destroy
+      end
     end
     @shoe.destroy
-    redirect_to shoes_path, notice: 'シューズを一足削除しました。'
+    redirect_to shoes_path, notice: 'シューズと、シューズの使われたコーデを削除しました。'
   end
 
   private

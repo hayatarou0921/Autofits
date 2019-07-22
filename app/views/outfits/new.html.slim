@@ -2,20 +2,24 @@
   h1 コーディネートを作成する
 
   =form_with model: @outfit, local:true do |f|
-    .form-group
-      - @tops.each do |top|
-        =image_tag top.image.url
-        =f.label :top
-        =f.radio_button :top,  "#{top.id}"
-    .form-group
-      - @trousers.each do |trouser|
-        =image_tag trouser.image.url
-        =f.label :trouser
-        =f.radio_button :trouser,  "#{trouser.id}"
-    .form-group
-      - @shoes.each do |shoe|
-        =image_tag shoe.image.url
-        =f.label :shoe
-        =f.radio_button :shoe,  "#{shoe.id}"
+    .row
+      .form-group.col-3.d-inline-block.text-center.item
+        - @tops.each do |top|
+          =image_tag top.image.url, class: 'd-block'
+          =label_tag  do
+            i.far.fa-hand-pointer
+          =f.radio_button :top,  "#{top.id}"
+      .form-group.col-3.d-inline-block.text-center.item
+        - @trousers.each do |trouser|
+          =image_tag trouser.image.url, class: 'd-block'
+          =label_tag do
+            i.far.fa-hand-pointer 
+          =f.radio_button :trouser,  "#{trouser.id}"
+      .form-group.col-3.d-inline-block.text-center.item
+        - @shoes.each do |shoe|
+          =image_tag shoe.image.url, class: 'd-block'
+          =label_tag do
+            i.far.fa-hand-pointer 
+          =f.radio_button :shoe,  "#{shoe.id}"
 
-    =f.submit '作成する', class: 'btn btn-primary'
+    =f.submit '作成する', class: 'btn btn-primary d-block mb-3 col-2 mx-auto'

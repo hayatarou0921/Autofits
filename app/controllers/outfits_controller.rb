@@ -1,23 +1,28 @@
 class OutfitsController < ApplicationController
+  include OutfitCheck
+
   def index
     @outfits = Outfit.all
   end
 
   def new
     @outfit = Outfit.new
-    @tops = Top.all
-    @trousers = Trouser.all
-    @shoes = Shoe.all
+    set_items
   end
 
   def create
-    @outfit = Outfit.new
-    @outfit.top_id = params[:outfit][:top]
-    @outfit.trouser_id = params[:outfit][:trouser]
-    @outfit.shoe_id = params[:outfit][:shoe]
-    @outfit.user_id = current_user.id
-    if @outfit.save
-      redirect_to outfits_path
+
+    check_params
+    if flash[:alert].nil?
+      @outfit = Outfit.new
+      set_id_from_params
+      set_user_id(@outfit)
+      if @outfit.save
+        flash.notice = 'コーディネートを追加しました。'
+        redirect_to outfits_path 
+      end
+    else
+      redirect_to new_outfit_path
     end
   end
 
@@ -36,6 +41,7 @@ class OutfitsController < ApplicationController
   def destroy
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
+    flash[:notice] = 'コーディネートを削除しました。'
     redirect_to outfits_path
   end
 

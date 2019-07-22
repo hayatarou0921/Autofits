@@ -2,6 +2,6 @@
   h1 トップス一覧
   - @tops.each do |top|
     .item.col-3.d-inline-block.text-center
-      = image_tag top.image.url, class: 'mx-auto'
-      =link_to '削除する', top_path(top), method: :delete, data: { confirm: 'トップスを削除してもよろしいですか？' }, class: 'btn'
+      = image_tag top.image.url
+      =link_to '  削除', top_path(top), method: :delete, data: { confirm: 'トップスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
   =link_to 'トップスを追加する', new_top_path, class: 'btn btn-primary d-block col-4 mx-auto mt-3'

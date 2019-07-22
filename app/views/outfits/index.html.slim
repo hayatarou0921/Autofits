@@ -1,11 +1,14 @@
 .container.outfits
   h1 コーディネート一覧
 
-  - @outfits.each do |outfit|
-    .item
-      = image_tag connect_top_id_to_user(outfit).image.url
-      = image_tag connect_trouser_id_to_user(outfit).image.url
-      = image_tag connect_shoe_id_to_user(outfit).image.url
-      = link_to '削除する', outfit_path(outfit), method: :delete
+  =link_to 'コーディネートを作成する', new_outfit_path, class: 'btn btn-primary mx-auto my-3 col-3 d-block'
 
-  =link_to 'コーディネートを作成する', new_outfit_path, class: 'btn btn-primary'
+  - @outfits.each do |outfit|
+    .item.d-inline-block.col-3
+      = image_tag connect_top_id_to_user(outfit).image.url, class: 'd-block'
+      = image_tag connect_trouser_id_to_user(outfit).image.url, class: 'd-block'
+      = image_tag connect_shoe_id_to_user(outfit).image.url, class: 'd-block'
+      = link_to '  削除', outfit_path(outfit), method: :delete, data: { confirm: 'コーディネートを削除してよろしいですか？' } , class: 'btn far fa-trash-alt d-block mx-auto'
+
+  -if @outfits.count >= 4
+    =link_to 'コーディネートを作成する', new_outfit_path, class: 'btn btn-primary mx-auto my-3 col-3 d-block'

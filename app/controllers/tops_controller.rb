@@ -1,4 +1,5 @@
 class TopsController < ApplicationController
+  include SetAttributes
   def index
     @tops = Top.all
   end
@@ -9,7 +10,7 @@ class TopsController < ApplicationController
 
   def create
     @top = Top.new(top_params)
-    @top.user_id = current_user.id
+    set_user_id(@top)
     if @top.save
       redirect_to tops_path, notice: 'トップスを追加しました。'
     else
@@ -19,8 +20,13 @@ class TopsController < ApplicationController
 
   def destroy
     @top = Top.find(params[:id])
+    if outfits = Outfit.where(top_id: @top.id)
+      outfits.each do |outfit|
+        outfit.destroy
+      end
+    end
     @top.destroy
-    redirect_to tops_path, notice: 'トップスを削除しました。'
+    redirect_to tops_path, notice: 'トップスと、トップスの使われたコーデを削除しました。'
   end
 
   private
