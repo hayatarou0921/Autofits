@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :outfits
+  resources :outfits do
+    collection do
+      get 'set'
+    end
+  end
   resources :tops, only: [:index, :new, :create, :destroy]
   resources :trousers, only: [:index, :new, :create, :destroy]
   resources :shoes, only: [:index, :new, :create, :destroy]
