@@ -1,0 +1,5 @@
+= form_with model: item, local: true do |f|
+    .form-group
+      =f.label :image
+        =f.file_field :image, class: 'form-control'
+    =f.submit '追加', class: 'btn btn-primary d-block'
