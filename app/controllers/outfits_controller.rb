@@ -1,4 +1,5 @@
 class OutfitsController < ApplicationController
+  
   include OutfitCheck
 
   def index
@@ -11,8 +12,7 @@ class OutfitsController < ApplicationController
   end
 
   def create
-
-    check_params
+   check_params
     if flash[:alert].nil?
       @outfit = Outfit.new
       set_id_from_params

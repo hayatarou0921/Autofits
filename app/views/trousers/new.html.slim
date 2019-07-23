@@ -1,7 +1,3 @@
 .trousers.container
   h1 トップスを追加する
-  = form_with model: @trouser, local: true do |f|
-    .form-group
-      =f.label :image
-      =f.file_field :image, class: 'form-control'
-    =f.submit '追加', class: 'btn btn-primary'
+  =render 'shared/image_upload', item: @trouser
