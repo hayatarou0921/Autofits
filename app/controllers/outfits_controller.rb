@@ -1,10 +1,10 @@
 class OutfitsController < ApplicationController
   include OutfitCheck
   include RandomOutfit
-  before_action :check_amount_of_outfit, only: [:set]
+  before_action :check_amount_of_outfit, only: [:set, :set_another_outfit]
 
   def index
-    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(6)
+    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(9)
   end
 
   def new
