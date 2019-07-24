@@ -26,7 +26,7 @@ class TopsController < ApplicationController
       end
     end
     @top.destroy
-    redirect_to tops_path, notice: 'トップスと、トップスの使われたコーデを削除しました。'
+    @message = 'トップスと、トップスの含まれたコーデを削除しました。'
   end
 
   private
