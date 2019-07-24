@@ -1,0 +1,12 @@
+.container.outfits
+  h1.mb-3 コーデを決める
+
+  =button_to 'ランダムで選ぶ！', {controller: 'outfits', action: 'set'}, {remote: true, method: :get, class: "btn btn-primary d-block mx-auto"}
+  
+  div id='selected-outfit'
+    span id='selected-top'
+    span id='selected-trouser'
+    span id='selected-shoe'
+
+  div id='another-outfit'
+  

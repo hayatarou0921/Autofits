@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :outfits do
     collection do
       get 'set'
+      get 'set_another_outfit'
     end
   end
   resources :tops, only: [:index, :new, :create, :destroy]

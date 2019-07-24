@@ -1,12 +1,14 @@
 nav.navbar.navbar-light.bg-light.fixed-top
   header.container
     =link_to Autofits, root_path, class: 'mr-auto navbar-brand autofits'
+    
     ul.justify-content-end.my-auto
       -if current_user.nil?
         li =link_to 'Home', root_path, class: 'mr-5 link'
         li =link_to 'About', about_path, class: 'link mr-5'
         li =link_to 'ログイン', new_user_session_path, class: 'link mr-5'
       -if current_user
+        li =link_to 'コーデを決める', set_outfits_path, class: 'link mr-5'
         li =link_to 'コーデ一覧', outfits_path, class: 'link mr-5'
         li =link_to 'トップス一覧', tops_path, class: 'link mr-5'
         li =link_to 'ボトムス一覧', trousers_path, class: 'link mr-5'

@@ -27,7 +27,7 @@ class TrousersController < ApplicationController
       end
     end
     @trouser.destroy
-    redirect_to trousers_path, notice: 'ボトムスと、ボトムスの使われたコーデを削除しました。'
+    @message = 'ボトムスと、ボトムスの含まれたコーデを削除しました。'
   end
 
   private

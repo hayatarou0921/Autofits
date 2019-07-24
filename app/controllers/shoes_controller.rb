@@ -1,6 +1,6 @@
 class ShoesController < ApplicationController
   include SetAttributes
-  
+
   def index
     @shoes = Shoe.all
   end
@@ -27,10 +27,11 @@ class ShoesController < ApplicationController
       end
     end
     @shoe.destroy
-    redirect_to shoes_path, notice: 'シューズと、シューズの使われたコーデを削除しました。'
+    @message = 'シューズと、シューズの含まれたコーデを削除しました。'
   end
 
   private
+
     def shoe_params
       params.require(:shoe).permit(:image)
     end
