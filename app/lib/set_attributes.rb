@@ -1,8 +1,8 @@
 module SetAttributes
   def set_items
-    @tops = Top.all
-    @trousers = Trouser.all
-    @shoes = Shoe.all
+    @tops = Top.where(user_id: current_user.id)
+    @trousers = Trouser.where(user_id: current_user.id)
+    @shoes = Shoe.where(user_id: current_user.id)
   end
 
   def set_id_from_params 

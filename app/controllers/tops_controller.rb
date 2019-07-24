@@ -1,7 +1,8 @@
 class TopsController < ApplicationController
   include SetAttributes
+
   def index
-    @tops = Top.all
+    @tops = Top.where(user_id: current_user.id).page(params[:page]).per(6)
   end
 
   def new

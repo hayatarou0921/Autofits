@@ -2,7 +2,7 @@ class ShoesController < ApplicationController
   include SetAttributes
 
   def index
-    @shoes = Shoe.all
+    @shoes = Shoe.where(user_id: current_user.id).page(params[:page]).per(9)
   end
 
   def new

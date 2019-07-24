@@ -2,10 +2,7 @@ module RandomOutfit
 
   private
     def random_outfit
-      @outfit = shuffle
-      if @outfit.nil?
-        shuffle
-      end
+      set
     end
 
     def rerandom_outfit
@@ -15,6 +12,6 @@ module RandomOutfit
     def shuffle
       first = Outfit.first.id
       last = Outfit.last.id
-      @outfit = Outfit.find_by(id: Random.rand(first..last))
+      @outfit = Outfit.where(user_id: current_user.id).find_by(id: Random.rand(first..last))
     end
 end

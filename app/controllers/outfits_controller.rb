@@ -1,8 +1,10 @@
 class OutfitsController < ApplicationController
   include OutfitCheck
   include RandomOutfit
+  before_action :check_amount_of_outfit, only: [:set]
+
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(6)
   end
 
   def new
@@ -25,18 +27,6 @@ class OutfitsController < ApplicationController
     end
   end
 
-  def show
-    @outfit = Outfit.find(params[:id])
-  end
-
-  def edit
-    @outfit = Outfit.find(params[:id])
-  end
-
-  def update
-    @outfit = Outfit.find(params[:id])
-  end
-
   def destroy
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
@@ -44,7 +34,10 @@ class OutfitsController < ApplicationController
   end
 
   def set
-    random_outfit
+    shuffle
+    if @outfit.nil?
+      random_outfit
+    end
     @outfit
   end
 
@@ -56,4 +49,12 @@ class OutfitsController < ApplicationController
       @outfit
     end
   end
+
+  private
+    def check_amount_of_outfit
+      if Outfit.where(user_id: current_user.id).count <= 1
+        flash[:alert] = '少なくとも２つ以上のコーデを作成してください。'
+        redirect_to outfits_path
+      end
+    end
 end
