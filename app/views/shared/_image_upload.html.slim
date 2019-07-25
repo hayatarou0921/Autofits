@@ -1,5 +1,12 @@
 = form_with model: item, local: true do |f|
     .form-group
-      =f.label :image
-        =f.file_field :image, class: 'form-control'
-    =f.submit '追加', class: 'btn btn-primary d-block mx-auto'
+      =f.label '画像'
+        div id='img-field' onClick="$('#file').click()"
+          -if item.image.url.present?
+            =image_tag(item.image.url)
+          -else
+            i class='fas fa-camera-retro'
+            i class='fas fa-file-upload add'
+
+      =f.file_field :image, class: 'image', style: 'display:none;', id: 'file'
+    =f.submit '追加', class: 'btn btn-primary d-block click'

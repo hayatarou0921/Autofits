@@ -1,2 +1,2 @@
-$('#trouser-<%= @trouser.id %>').html('');
+$('#renderd').html("<%= escape_javascript(render 'trousers', trousers: @trousers ) %>");
 $('#alert-message').html('<div class="alert alert-success"><%= @message %></div>')

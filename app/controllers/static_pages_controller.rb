@@ -10,7 +10,8 @@ class StaticPagesController < ApplicationController
   private
     def logged_in
       if current_user
-        redirect_to outfits_path, notice: 'すでにログインしています。'
+        flash[:notice] = 'すでにログインしています。' 
+        redirect_to outfits_path
       end
     end
 end

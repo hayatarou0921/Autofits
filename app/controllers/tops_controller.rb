@@ -21,17 +21,24 @@ class TopsController < ApplicationController
 
   def destroy
     @top = Top.find(params[:id])
-    if outfits = Outfit.where(top_id: @top.id)
-      outfits.each do |outfit|
-        outfit.destroy
-      end
-    end
+    #トップスの含まれたコーデを一緒に削除
+    destroy_outfits_with_tops
     @top.destroy
+    #Ajaxに渡すインスタンス変数
+    @tops = Top.where(user_id: current_user.id).page(params[:page]).per(9)
     @message = 'トップスと、トップスの含まれたコーデを削除しました。'
   end
 
   private
     def top_params
       params.require(:top).permit(:image)
+    end
+
+    def destroy_outfits_with_tops
+      if outfits = Outfit.where(user_id: current_user.id).where(top_id: @top.id)
+        outfits.each do |outfit|
+          outfit.destroy
+        end
+      end
     end
 end

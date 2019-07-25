@@ -1,25 +1,25 @@
-.container.outfits
+.container.items
   h1 コーディネートを作成する
 
   =form_with model: @outfit, local:true do |f|
     .row
-      .form-group.col-3.d-inline-block.text-center.item
+      .form-group.col-3.d-inline-block.text-center.outfits
         - @tops.each do |top|
           =image_tag top.image.url, class: 'd-block'
           =label_tag  do
             i.far.fa-hand-pointer
           =f.radio_button :top,  "#{top.id}"
-      .form-group.col-3.d-inline-block.text-center.item
+      .form-group.col-3.d-inline-block.text-center.outfits
         - @trousers.each do |trouser|
           =image_tag trouser.image.url, class: 'd-block'
           =label_tag do
             i.far.fa-hand-pointer 
           =f.radio_button :trouser,  "#{trouser.id}"
-      .form-group.col-3.d-inline-block.text-center.item
+      .form-group.col-3.d-inline-block.text-center.outfits
         - @shoes.each do |shoe|
           =image_tag shoe.image.url, class: 'd-block'
           =label_tag do
             i.far.fa-hand-pointer 
           =f.radio_button :shoe,  "#{shoe.id}"
 
-    =f.submit '作成する', class: 'btn btn-primary d-block mb-3 col-2 mx-auto'
+    =f.submit '作成する', class: 'btn btn-primary click d-block col-2'

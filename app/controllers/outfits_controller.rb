@@ -4,7 +4,7 @@ class OutfitsController < ApplicationController
   before_action :check_amount_of_outfit, only: [:set, :set_another_outfit]
 
   def index
-    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(9)
+    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(6)
   end
 
   def new
@@ -30,6 +30,7 @@ class OutfitsController < ApplicationController
   def destroy
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
+    @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(6)
     @message = 'コーディネートを削除しました。'
   end
 

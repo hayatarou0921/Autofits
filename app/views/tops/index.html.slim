@@ -1,10 +1,11 @@
-.tops.container
+.items.container
   h1 トップス一覧
   div id="alert-message" class='text-center col-8 d-block mx-auto'
-  - @tops.each do |top|
-    div id="top-#{top.id}" class="d-inline"
-      .item.col-3.d-inline-block.text-center
-        = image_tag top.image.url
-        =link_to '  削除', top_path(top), method: :delete, remote: true, data: { confirm: 'トップスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
+  div id='renderd'
+    - @tops.each do |top|
+      div id="top-#{top.id}" class="d-inline"
+        .item.col-3.d-inline-block.text-center
+          = image_tag top.image.url
+          =link_to '  削除', top_path(top), method: :delete, remote: true, data: { confirm: 'トップスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
   =paginate @tops
-  =link_to 'トップスを追加する', new_top_path, class: 'btn btn-primary d-block col-4 mx-auto mt-3 delete'
+  =link_to 'トップスを追加する', new_top_path, class: 'btn btn-primary click d-block col-4 delete'
