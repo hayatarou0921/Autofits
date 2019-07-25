@@ -10,15 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
+//= require popper
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-//= require popper
 //= require tether
-//= require jquery
-//= require jquery_ujs
+
 
 $(document).on('turbolinks:load', function(){
   $fileField = $('#file')
