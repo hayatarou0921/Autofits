@@ -9,7 +9,7 @@
 
     &:before {
       content: '';
-      background-color: rgba(0,0,0,.5);
+      background-color: rgba(0,0,0,.4);
       position: absolute;
       top: 0;
       right: 0;
@@ -75,5 +75,67 @@
   #detail {
     border: none;
     border-radius: 10px;
+  }
+}
+
+.about-layout {
+  .jumbotron {
+    background-image: url('shoes-2591781_1920.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 200vh;
+    
+    &:before {
+      content: '';
+      background-color: rgba(0,0,0,.5);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .about {
+    width: 900px;
+    position: absolute;
+
+    h1, h2, p {
+      color: white;
+    }
+
+    h1 {
+      font-size: 5em;
+      letter-spacing: 1px;
+      padding-top: 80px;
+    }
+    h2 {
+      font-size: 2em;
+      letter-spacing: 1px;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+    p {
+      font-size: 2em;
+      text-align: center;
+      padding: 5px 20px;
+    }
+
+    .description {
+      border: solid 1px #6b6469;
+      background: white;
+      border-radius: 30px;
+      p {
+        color: black;
+      }
+    }
   }
 }

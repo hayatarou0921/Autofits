@@ -39,48 +39,6 @@ header {
   letter-spacing: 1px;
 }
 
-// ----- Home ----- //
-
-
-
-// ---- about ---- //
-
-.about {
-
-  color: white;
-  background-image: url('shoes-2591781_1920.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 100px;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-
-  &:before {
-    content: '';
-    background-color: rgba(0,0,0,.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  h1 {
-    font-size: 5em;
-    letter-spacing: 1px;
-    padding-top: 80px;
-    z-index: 1;
-  }
-
-  p {
-    font-size: 2em;
-    text-align: center;
-  }
-}
-
 // --- various --- //
 
 
@@ -155,7 +113,7 @@ form {
     top: 75px;
   }
 
-  i.add {
+  i.add2 {
     display: none;
     font-size: 30px;
     position: absolute;
@@ -204,3 +162,8 @@ input[type=number]:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
+
+.alert {
+  text-align: center;
+}
+

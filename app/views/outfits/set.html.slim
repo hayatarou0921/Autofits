@@ -1,12 +1,9 @@
 .container.items
   h1.mb-3 コーデを決める
   #random
-    =button_to '今日の服装はこれ！', {controller: 'outfits', action: 'set'}, {remote: true, method: :get, class: "btn btn-primary click d-block"}
+    =button_to '今日の服装はこれ！', {controller: 'outfits', action: 'set'}, {remote: true, method: :get, class: 'btn btn-default click d-block select'}
   
   div id='selected-outfit'
-    span id='selected-top'
-    span id='selected-trouser'
-    span id='selected-shoe'
 
   div id='another-outfit'
   
