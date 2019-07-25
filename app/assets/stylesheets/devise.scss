@@ -1,0 +1,68 @@
+#d {
+  .jumbotron {
+    background-image: url('interview-2211354_1920.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+
+    &:before {  
+        content: '';
+        background-color: rgba(0,0,0,.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+  }
+  .container {
+    max-width: 700px;
+  }
+  .devise {
+    color: #6b6469;
+    border: solid 3px #aaa;
+    margin-top: 70px;
+    background: white;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 25px;
+    position: absolute;
+    width: 700px;
+    
+    h1 {
+      font-size: 50px;
+      margin-top: 20px;
+    }
+
+    .form {
+      text-align: center;
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .btn {
+      border: solid 2px #6b6469;
+      border-radius: 90px;
+      background: white;
+      color: #6b6469;
+      text-decoration: none;
+      font-size: 18px;
+      &:hover {
+        color: white;
+        background: #6b6469;
+      }
+    }
+    a {
+      color: #6b6469;
+      font-size: 16px;
+      &:hover {
+       opacity: 0.6;
+      }
+    }
+  }
+}
+
+
