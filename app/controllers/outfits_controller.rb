@@ -2,6 +2,7 @@ class OutfitsController < ApplicationController
   include OutfitCheck
   include RandomOutfit
   before_action :check_amount_of_outfit, only: [:set, :set_another_outfit]
+  before_action :check_amount_of_items, only: [:new, :create]
 
   def index
     @outfits = Outfit.where(user_id: current_user.id).page(params[:page]).per(6)
@@ -55,6 +56,12 @@ class OutfitsController < ApplicationController
     def check_amount_of_outfit
       if Outfit.where(user_id: current_user.id).count <= 1
         flash[:alert] = '少なくとも２つ以上のコーデを作成してください。'
+        redirect_to outfits_path
+      end
+    end
+    def check_amount_of_items
+      if Top.where(user_id: current_user.id).count < 1 || Trouser.where(user_id: current_user.id).count < 1 || Shoe.where(user_id: current_user.id).count < 1
+        flash[:alert] = 'コーディネートを組むのに必要なアイテムがありません。'
         redirect_to outfits_path
       end
     end

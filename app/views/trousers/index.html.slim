@@ -1,5 +1,6 @@
 .items.container
   h1 ボトムス一覧
+  =render 'shared/notice_alert'
   div id="alert-message" class='text-center col-8 d-block mx-auto'
   div id='renderd'
     - @trousers.each do |trouser|
@@ -8,4 +9,4 @@
           =image_tag trouser.image.url
           =link_to '  削除', trouser_path(trouser), method: :delete, remote: true , data: { confirm: 'ボトムスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
   =paginate @trousers
-  =link_to 'ボトムスを追加する', new_trouser_path, class: 'btn btn-primary click d-block col-4'
+  =link_to '　ボトムスを追加する', new_trouser_path, class: 'btn btn-default add click d-block col-4 fas fa-plus'

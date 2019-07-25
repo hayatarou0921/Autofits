@@ -1,5 +1,6 @@
 .items.container
   h1 トップス一覧
+  =render 'shared/notice_alert'
   div id="alert-message" class='text-center col-8 d-block mx-auto'
   div id='renderd'
     - @tops.each do |top|
@@ -8,4 +9,4 @@
           = image_tag top.image.url
           =link_to '  削除', top_path(top), method: :delete, remote: true, data: { confirm: 'トップスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
   =paginate @tops
-  =link_to 'トップスを追加する', new_top_path, class: 'btn btn-primary click d-block col-4 delete'
+  =link_to '　トップスを追加する', new_top_path, class: 'btn add click d-block col-4 delete fas fa-plus'

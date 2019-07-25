@@ -1,5 +1,6 @@
 .items.container
   h1 シューズ一覧
+  =render 'shared/notice_alert'
   div id="alert-message" class='text-center col-8 d-block mx-auto'
   div id='renderd'
     - @shoes.each do |shoe|
@@ -8,4 +9,4 @@
           =image_tag shoe.image.url
           =link_to '  削除', shoe_path(shoe), method: :delete, remote: true, data: { confirm: 'シューズを削除してもよろしいですか？' }, class: 'btn my-3 far fa-trash-alt'
   =paginate @shoes
-  =link_to 'シューズを追加する', new_shoe_path, class: 'btn btn-primary click d-block col-4'
+  =link_to '　シューズを追加する', new_shoe_path, class: 'btn btn-default add click d-block col-4 fas fa-plus'

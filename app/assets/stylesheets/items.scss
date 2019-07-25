@@ -1,0 +1,21 @@
+.items {
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #6b6469;
+    padding-top: 125px;
+  }
+  .add {
+    border: solid 1px #6b6469;
+    padding: 10px 0;
+
+    &:hover {
+      color: white;
+      background-color: #6b6469;
+    }
+  }
+  .submit {
+    border: solid 1px #6b6469;
+    padding: 10px 20px;
+  }
+}

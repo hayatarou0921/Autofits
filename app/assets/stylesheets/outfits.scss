@@ -1,16 +1,33 @@
 // Place all the styles related to the outfits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 #outfit {
   height: 670px;
   vertical-align: top;
 }
+
+.select {
+  font-size: 20px;
+  background-color: #a3a0a2;
+  color: white;
+  padding: 15px 25px;
+  border: 1px solid rgb(59, 58, 58);
+  border-radius: 15px;
+
+  &:hover {
+    color: white;
+    opacity: 0.8;
+    border: 1px solid #6b6469;
+    border-radius: 15px;
+  }
+}
+
 .selected {
-  width: 180px;
+  width: 700px;
   border: 1px solid gray;
   border-radius: 15px;
   margin: 0 auto;
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   

@@ -6,7 +6,7 @@
             =image_tag(item.image.url)
           -else
             i class='fas fa-camera-retro'
-            i class='fas fa-file-upload add'
+            i class='fas fa-file-upload add2'
 
       =f.file_field :image, class: 'image', style: 'display:none;', id: 'file'
-    =f.submit '追加', class: 'btn btn-primary d-block click'
+    =f.submit '追加する', class: 'btn btn-default submit d-block click fas fa-plus'

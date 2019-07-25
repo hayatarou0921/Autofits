@@ -1,8 +1,9 @@
-#d
+.devise-layout
   .jumbotron
     .container
       .devise
-        h1
+        =render 'shared/notice_alert'
+        h1.text-center
           = t('.sign_in') 
         .form
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

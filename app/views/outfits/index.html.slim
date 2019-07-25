@@ -1,7 +1,8 @@
 .container.items
   h1 コーディネート一覧
+  =render 'shared/notice_alert'
   div id="alert-message" class='text-center col-8 d-block mx-auto'
-  =link_to 'コーディネートを作成する', new_outfit_path, class: 'btn btn-primary click mx-auto col-3 d-block'
+  =link_to ' コーディネートを作成する', new_outfit_path, class: 'btn btn-default add click mx-auto col-3 d-block fas fa-plus'
 
   div id='renderd'
     - @outfits.each do |outfit|
@@ -13,4 +14,4 @@
           = link_to '  削除', outfit_path(outfit), method: :delete, remote: true , data: { confirm: 'コーディネートを削除してよろしいですか？' } , class: 'btn far fa-trash-alt d-block mx-auto'
   =paginate @outfits
   -if @outfits.count >= 4
-    =link_to 'コーディネートを作成する', new_outfit_path, class: 'btn btn-primary click col-3 d-block'
+    =link_to ' コーディネートを作成する', new_outfit_path, class: 'btn btn-default add click col-3 d-block fas fa-plus'
