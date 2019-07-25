@@ -1,8 +1,37 @@
 // Place all the styles related to the outfits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#outfit {
+  height: 670px;
+  vertical-align: top;
+}
+.selected {
+  width: 180px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  
+  img {
+    padding: 5px;
+    border: 1px white gray;
+    border-radius: 30px;
+  }
+}
+
 .outfits {
-  h1 {
-    padding-top: 75px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin: 15px 40px;
+  width: 277.5px;
+  vertical-align: top;
+  
+  img {
+    padding: 5px;
+    border: 1px white gray;
+    border-radius: 30px;
+    margin: auto auto;
   }
 }

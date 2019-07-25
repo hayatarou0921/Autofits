@@ -1,0 +1,7 @@
+- outfits.each do |outfit|
+    div id="outfit-#{outfit.id}" class='d-inline'
+      #outfit.item.d-inline-block.col-3
+        = image_tag connect_top_id_to_user(outfit).image.url, class: 'd-block'
+        = image_tag connect_trouser_id_to_user(outfit).image.url, class: 'd-block'
+        = image_tag connect_shoe_id_to_user(outfit).image.url, class: 'd-block'
+        = link_to '  削除', outfit_path(outfit), method: :delete, remote: true , data: { confirm: 'コーディネートを削除してよろしいですか？' } , class: 'btn far fa-trash-alt d-block mx-auto'

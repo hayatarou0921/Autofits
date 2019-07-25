@@ -1,10 +1,11 @@
-.trousers.container
+.items.container
   h1 ボトムス一覧
   div id="alert-message" class='text-center col-8 d-block mx-auto'
-  - @trousers.each do |trouser|
-    div id="trouser-#{trouser.id}" class="d-inline mx-auto"
-      .item.col-3.d-inline-block.text-center
-        =image_tag trouser.image.url
-        =link_to '  削除', trouser_path(trouser), method: :delete, remote: true , data: { confirm: 'ボトムスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
+  div id='renderd'
+    - @trousers.each do |trouser|
+      div id="trouser-#{trouser.id}" class="d-inline mx-auto"
+        .item.col-3.d-inline-block.text-center
+          =image_tag trouser.image.url
+          =link_to '  削除', trouser_path(trouser), method: :delete, remote: true , data: { confirm: 'ボトムスを削除してもよろしいですか？' }, class: 'btn far fa-trash-alt'
   =paginate @trousers
-  =link_to 'ボトムスを追加する', new_trouser_path, class: 'btn btn-primary d-block col-4 mx-auto mt-3'
+  =link_to 'ボトムスを追加する', new_trouser_path, class: 'btn btn-primary click d-block col-4'

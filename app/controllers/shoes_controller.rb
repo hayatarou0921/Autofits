@@ -20,13 +20,10 @@ class ShoesController < ApplicationController
   end
 
   def destroy
-    @shoe = Shoe.find(params[:id])
-    if outfits = Outfit.where(shoe_id: @shoe.id)
-      outfits.each do |outfit|
-        outfit.destroy
-      end
-    end
+    @shoe = Shoe.where(user_id: current_user.id).find(params[:id])
+    destroy_outfits_with_shoes
     @shoe.destroy
+    @shoes = Shoe.where(user_id: current_user.id).page(params[:page]).per(9)
     @message = 'シューズと、シューズの含まれたコーデを削除しました。'
   end
 
@@ -34,5 +31,13 @@ class ShoesController < ApplicationController
 
     def shoe_params
       params.require(:shoe).permit(:image)
+    end
+
+    def destroy_outfits_with_shoes
+      if outfits = Outfit.where(user_id: current_user.id).where(shoe_id: @shoe.id)
+        outfits.each do |outfit|
+          outfit.destroy
+        end
+      end
     end
 end
