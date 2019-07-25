@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_07_20_130940) do
 
-  create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "outfits", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "top_id", null: false
     t.integer "trouser_id", null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_130940) do
     t.index ["user_id"], name: "index_outfits_on_user_id"
   end
 
-  create_table "shoes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "shoes", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_130940) do
     t.index ["user_id"], name: "index_shoes_on_user_id"
   end
 
-  create_table "tops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tops", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_130940) do
     t.index ["user_id"], name: "index_tops_on_user_id"
   end
 
-  create_table "trousers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "trousers", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_130940) do
     t.index ["user_id"], name: "index_trousers_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
