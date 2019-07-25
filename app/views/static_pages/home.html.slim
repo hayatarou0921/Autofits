@@ -1,10 +1,13 @@
-section.home
-  .inner
-    h1.text-center Autofits
-    p Autofitsを使えば、その日何を着るか考えなくてもよくなります。
-    p コーデに悩む時間を減らして、時間を有効に使いましょう！
-    =link_to ' 詳しく見る', about_path, class: 'btn btn-info d-block col-2 fas fa-external-link-alt', id: 'detail'
-    =link_to '登録する', new_user_registration_path, class: 'btn col-2 ml-auto mr-4', id: 'signup'
-    =link_to 'ログインする', new_user_session_path, class: 'btn  col-2 ml-auto buttom', id:'login'
-  
+.home-layout
+  .jumbotron
+    .container
+      .home
+        h1.text-center Autofits
+        p どの服を着ようか迷ってしまう時ってありますよね。
+        p Autofitsを使えば、服装に悩まなくてよくなります。
+        p 決断の回数を減らして、時間を有効に使いましょう！
+        =link_to ' 詳しく見る', about_path, class: 'btn fas fa-external-link-alt', id: 'detail'
+        =link_to '登録する', new_user_registration_path, class: 'btn', id: 'signup'
+        =link_to 'ログインする', new_user_session_path, class: 'btn', id:'login'
+    
 
