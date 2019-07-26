@@ -88,6 +88,10 @@ GEM
     devise-i18n (1.8.0)
       devise (>= 4.6)
     diff-lcs (1.3)
+    dotenv (2.7.4)
+    dotenv-rails (2.7.4)
+      dotenv (= 2.7.4)
+      railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     excon (0.65.0)
     execjs (2.7.0)
@@ -313,6 +317,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   devise-i18n
+  dotenv-rails
   factory_bot_rails
   fog-aws
   font-awesome-sass
