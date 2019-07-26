@@ -7,7 +7,7 @@
 
 ***DEMO:***
 
-![Demo](https://raw.github.com/wiki/Hayatarou0921/Autfits/images/demoAutfits.gif)
+![demoAutfits](https://user-images.githubusercontent.com/51501611/61927797-1a7d4400-afb1-11e9-8127-3097543ce8ea.gif)
 
 ### 主な使用技術
 - DB
