@@ -300,7 +300,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   kaminari-bootstrap
-  listen (>= 3.0.5, < 3.2)
+  listen
   mini_magick (>= 4.9.4)
   openssl
   pg

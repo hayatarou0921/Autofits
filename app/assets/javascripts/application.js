@@ -12,13 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require popper
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
-//= require tether
+// require_tree .
 
 
 $(document).on('turbolinks:load', function(){
