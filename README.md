@@ -7,8 +7,8 @@
 
 ![demoAutfits](https://user-images.githubusercontent.com/51501611/61927797-1a7d4400-afb1-11e9-8127-3097543ce8ea.gif)
 
-メールアドレス = 'test@example.com'
-パスワード = 'password'
+メールアドレス = "test@example.com"    
+パスワード = "password"  
 で、テストユーザーとしてログインして頂けます。
 
 ### 主な使用技術
