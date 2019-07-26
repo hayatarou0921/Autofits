@@ -25,6 +25,7 @@ gem 'popper_js'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'fog'
 # Use mysql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
