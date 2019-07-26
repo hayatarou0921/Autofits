@@ -5,6 +5,10 @@
         =render 'shared/notice_alert'
         h1.text-center
           = t('.sign_in') 
+        .text-center
+          p テストユーザー
+          p メールアドレス: test@example.com
+          p パスワード: password
         .form
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .form-group
