@@ -4,9 +4,10 @@ require 'carrierwave/storage/fog'
  
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage :fog
+    # config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'autfits'
+    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
@@ -15,7 +16,7 @@ CarrierWave.configure do |config|
       path_style: true
     }
   else
-    config.storage :file
+    # config.storage :file
     config.enable_processing = false if Rails.env.test?
   end
 end
