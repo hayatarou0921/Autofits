@@ -15,6 +15,7 @@ class ShoesController < ApplicationController
     if @shoe.save
       redirect_to shoes_path, notice: 'シューズを追加しました。'
     else
+      flash.now[:alert] = '画像を選択してください。' 
       render :new
     end
   end

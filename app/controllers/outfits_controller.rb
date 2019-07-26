@@ -24,6 +24,7 @@ class OutfitsController < ApplicationController
         redirect_to outfits_path
       end
     else
+      flash[:alert] = 'アイテムを一つずつ選択してください。' 
       redirect_to new_outfit_path
     end
   end

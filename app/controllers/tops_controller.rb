@@ -15,6 +15,7 @@ class TopsController < ApplicationController
     if @top.save
       redirect_to tops_path, notice: 'トップスを追加しました。'
     else
+      flash.now[:alert] = '画像を選択してください。' 
       render :new
     end
   end

@@ -15,6 +15,7 @@ class TrousersController < ApplicationController
     if @trouser.save
       redirect_to trousers_path, notice: 'ボトムスを追加しました。'
     else
+      flash.now[:alert] = '画像を選択してください。' 
       render :new
     end
   end
