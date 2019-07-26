@@ -1,3 +1,5 @@
+//= require_self
+
 $(document).on('turbolinks:load', function(){
   $fileField = $('#file')
  
