@@ -1,24 +1,30 @@
-# README
+# Autofits
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Badge Status](https://ci-as-a-service)
 
-Things you may want to cover:
+自分の服の中からコーディネートを作成し、服装を自動で決められるアプリです。
+朝のお出かけ前の服装に悩む時間を減らすことができます。
 
-* Ruby version
+***DEMO:***
 
-* System dependencies
+![Demo](https://raw.github.com/wiki/Hayatarou0921/Autfits/images/demoAutfits.gif)
 
-* Configuration
+### 主な使用技術
+- DB
+  -PostgresQL
+- 画像アップロード機能
+  - CarrierWave
+  - MiniMagick
+- ユーザー管理機能
+  -devise
+- ページネーション機能
+  - kaminari
+- 画像のストレージ管理
+  - AWS S3
+  - fog-aws
+- フロント開発
+  -slim
+  -bootstrap
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby 2.6.3
+- Rails 5.2.3
