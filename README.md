@@ -10,6 +10,14 @@
 メールアドレス = "test@example.com"    
 パスワード = "password"  
 で、テストユーザーとしてログインして頂けます。
+```
+git clone
+```
+ し、config/credentials.ymlを削除した後に、
+```
+  EDITOR="vi --wait" bin/rails credentials:edit
+```
+を実行してください。
 
 ### 主な使用技術
 - DB
