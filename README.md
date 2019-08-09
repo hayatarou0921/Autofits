@@ -11,7 +11,7 @@
 パスワード = "password"  
 で、テストユーザーとしてログインして頂けます。
 ```
-git clone
+git clone https://github.com/hayatarou0921/Autofits.git
 ```
  し、config/credentials.ymlを削除した後に、
 ```
